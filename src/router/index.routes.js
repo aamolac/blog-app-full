@@ -6,7 +6,6 @@ const router = express.Router();
 router.get("/", (req, res) => {
   const q = "SELECT * FROM story";
   pool.query(q).then(([datas]) => {
-    console.log(datas);
     res.render("home", { datas });
   });
 });
@@ -28,19 +27,6 @@ router.get("/create", (req, res) => {
 
 router.post("/create", (req, res) => {
   console.log(req.body);
-  const q =
-    "INSERT INTO story (title, content, publishDate, img, category_id) VALUES (?, ?, NOW(), ?, ?)";
-  pool
-    .execute(q, [
-      req.body.title,
-      req.body.content,
-      req.body.img,
-      req.body.category_id,
-    ])
-    .then(() => {
-      res.redirect("/");
-    })
-    .catch((error) => console.log(error));
 });
 
 router.get("*", (req, res) => {
