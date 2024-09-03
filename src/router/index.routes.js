@@ -26,12 +26,22 @@ router.get("/create", (req, res) => {
   });
 });
 
-// router.get("/admin/story/create", (req, res) => {
-//   const q = "SELECT * FROM category";
-//   pool.query(q).then(([categories]) => {
-//     res.render("admin/story/create", { categories });
-//   });
-// });
+router.post("/create", (req, res) => {
+  console.log(req.body);
+  const q =
+    "INSERT INTO story (title, content, publishDate, img, category_id) VALUES (?, ?, NOW(), ?, ?)";
+  pool
+    .execute(q, [
+      req.body.title,
+      req.body.content,
+      req.body.img,
+      req.body.category_id,
+    ])
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch((error) => console.log(error));
+});
 
 router.get("*", (req, res) => {
   res.render("notfound");
