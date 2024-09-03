@@ -27,26 +27,44 @@
     </header>
 
     <main>
-      <h2>Add new Story</h2>
+      <h2>Add new story</h2>
+      <section id="create-story">
+        <form action="/create" method="post">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            required
+            placeholder="Please indicate a title"
+          />
+          <label for="content">Content</label>
+          <textarea
+            name="content"
+            id="content"
+            required
+            placeholder="Please indicate a story"
+          ></textarea>
 
-      <form action="/admin/story/create" method="post">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" required />
-        <label for="content">Content</label>
-        <textarea name="content" id="content" required></textarea>
+          <label for="image">Image</label>
+          <input
+            type="text"
+            name="img"
+            id="image"
+            required
+            placeholder="Please enter the image file name"
+          />
 
-        <label for="image-name">Image name</label>
-        <input type="text" name="img" id="image-name" required />
+          <label for="category">Category</label>
+          <select name="category_id" id="category">
+            <% for (const category of categories) {%>
+            <option value="<%= category.id %>"><%= category.label %></option>
+            <% } %>
+          </select>
 
-        <label for="category">Category</label>
-        <select name="category_id" id="category">
-          <% for (const category of categories) {%>
-          <option value="<%= category.id %>"><%= category.label %></option>
-          <% } %>
-        </select>
-
-        <button type="submit">Create</button>
-      </form>
+          <button type="submit">Create</button>
+        </form>
+      </section>
     </main>
     <footer>
       <p>© 2024 - MY BLOG</p>

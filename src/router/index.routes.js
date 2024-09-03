@@ -20,8 +20,18 @@ router.get("/story/:id", (req, res) => {
 });
 
 router.get("/create", (req, res) => {
-  res.render("story-create");
+  const q = "SELECT * FROM category";
+  pool.query(q).then(([categories]) => {
+    res.render("story-create", { categories });
+  });
 });
+
+// router.get("/admin/story/create", (req, res) => {
+//   const q = "SELECT * FROM category";
+//   pool.query(q).then(([categories]) => {
+//     res.render("admin/story/create", { categories });
+//   });
+// });
 
 router.get("*", (req, res) => {
   res.render("notfound");

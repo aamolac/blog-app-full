@@ -84,7 +84,7 @@ header a:hover,
   color: black;
 }
 
-/* PAGE article */
+/* PAGE STORY */
 #back a {
   display: inline-block;
   border: grey 2px solid;
@@ -160,6 +160,46 @@ article a {
 article a:hover {
   background-color: blue;
   color: white;
+}
+
+/* PAGE CREATE STORY */
+
+#create-story {
+  width: 50%;
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 7px;
+  height: 100px;
+  padding-left: 5px;
+}
+
+button {
+  border: green 2px solid;
+  border-radius: 5px;
+  background-color: white;
+  color: green;
+  font-weight: bold;
+  margin: 20px;
+  padding: 5px;
 }
 
 /* FOOTER */
