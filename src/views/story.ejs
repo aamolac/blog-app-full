@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY BLOG</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <header>
+      <section id="container">
+        <h1>BLOG</h1>
+        <nav>
+          <a href="/">HOME</a>
+          <a href="/contact">CONTACT</a>
+          <a href="/about">ABOUT</a>
+          <a href="/create">CREATE STORY</a>
+          <a href="/signin">SIGN IN</a>
+        </nav>
+      </section>
+    </header>
+
+    <main>
+      <div id="back">
+        <a href="/" title="Back to home page" aria-label="Back to home page"
+          ><i class="fa-solid fa-arrow-left"></i> Back</a
+        >
+      </div>
+      <h2><%= data.title %></h2>
+      <section id="container">
+        <div id="story">
+          <article>
+            <img src="/images/<%= data.img %>" />
+            <%- data.content %>
+            <p>Author : <%= data.author %></p>
+            <p>Publication date : <%= data.publishDate %></p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2024 - MY BLOG</p>
+    </footer>
+  </body>
+</html>

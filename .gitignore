@@ -1,0 +1,4 @@
+# on envoit pas ces fichiers là lors du repisitory
+.env
+node_modules
+blog_fsjs40_ns-main
